@@ -4421,8 +4421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e830d2afb07b187429a66a95a70abcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 0}
-  bulletPrefab: {fileID: 6357403363984274748, guid: f74dfa41091f0bb4e93a443155a3815e, type: 3}
 --- !u!114 &1546577453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4435,7 +4433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d6639365077db46b58da277ed7bb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSpeed: 50
+  shootSpeed: 500
   shootTimer: 0.5
   isShooting: 0
   shootPos: {fileID: 2051870580}
