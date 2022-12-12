@@ -11,6 +11,8 @@ public class PlayerShoot : MonoBehaviour
     public Transform shootPos;
     public GameObject bullet;
 
+    public ParticleSystem smoke;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,19 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !isShooting)
         {
             StartCoroutine(Shoot());
-        } 
-        
-
-
+           EnitSmoke();
+        }   
     }
+        
+    private void EnitSmoke(){
+        smoke.Play();
+    }
+
+    
+
+       
+
+    
     IEnumerator Shoot()
     {
         isShooting = true;
@@ -39,3 +49,4 @@ public class PlayerShoot : MonoBehaviour
     }
     
 }
+    
