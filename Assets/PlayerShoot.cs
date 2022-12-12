@@ -37,5 +37,5 @@ public class PlayerShoot : MonoBehaviour
         yield return new WaitForSeconds(shootTimer);
         isShooting = false;
     }
-    //https://www.youtube.com/watch?v=K4loGbMWm80 VIDEO INSTRUCTIONS
+    
 }

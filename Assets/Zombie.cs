@@ -9,6 +9,7 @@ using UnityEngine;
     private bool checkTrigger;
     public float speed;
     public Transform target;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -42,5 +43,8 @@ using UnityEngine;
             checkTrigger = false;
         }
     }
+
+        
+
 }
 
