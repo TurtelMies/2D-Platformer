@@ -26,14 +26,17 @@ public class PlayerShoot : MonoBehaviour
         {
             StartCoroutine(Shoot());
            EnitSmoke();
+           
         }   
     }
         
+//---------------------------------------//////////////////////////////---------DO MUZZLE FLASH
+
     private void EnitSmoke(){
         smoke.Play();
     }
 
-    
+        
 
        
 
@@ -43,6 +46,8 @@ public class PlayerShoot : MonoBehaviour
         isShooting = true;
         GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
         newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * Time.fixedDeltaTime, 0f);
+        
+        
         
         yield return new WaitForSeconds(shootTimer);
         isShooting = false;
