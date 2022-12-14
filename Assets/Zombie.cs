@@ -11,11 +11,27 @@ using UnityEngine;
     public Transform target;
   
 
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
+
+
+
+ void OnTriggerEnter2D(Collider2D collision)
+ {
+ if (collision.gameObject.CompareTag("Bullet"))
+    {
+        Destroy(this.gameObject);
+    }   
+
+ }
+
 
     // Update is called once per frame
     void Update()
@@ -24,26 +40,11 @@ using UnityEngine;
         //if (checkTrigger ){}
         
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        
+
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.name == "Player")
-        {
-            checkTrigger = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.name == "Player")
-        {
-            checkTrigger = false;
-        }
-    }
-
+   
         
 
 }

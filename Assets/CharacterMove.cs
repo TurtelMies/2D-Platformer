@@ -32,7 +32,7 @@ public class CharacterMove : MonoBehaviour
         
         
  //recoil
-if (Input.GetButtonDown("Fire1") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+if (Input.GetButtonDown("Fire1") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f) //Voi potkaista ilman ampumista
         {
             _rigidbody.AddForce(new Vector2(-5, 2), ForceMode2D.Impulse);
         }
