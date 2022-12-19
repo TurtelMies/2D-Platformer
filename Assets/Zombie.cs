@@ -6,14 +6,19 @@ using UnityEngine;
 
     public class Zombie : MonoBehaviour
 {
-    private bool checkTrigger;
-    public float speed;
-    public Transform target;
+     private bool checkTrigger;
+     public float speed;
+     public Transform target;
+
+     public GameObject head;
+     public GameObject zombiebody;
   
+     public float horizontalInput;
+     public float verticalInput;
 
+   
 
-
-
+     
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +32,9 @@ using UnityEngine;
  {
  if (collision.gameObject.CompareTag("Bullet"))
     {
+       
         Destroy(this.gameObject);
+      StartCoroutine(spawn());
     }   
 
  }
@@ -41,11 +48,15 @@ using UnityEngine;
         
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-
     }
 
-   
-        
+    IEnumerator spawn()
+    {
+       Instantiate(head,new Vector2 (0,10), Quaternion.identity);
+       Instantiate(zombiebody,new Vector2 (0,0), Quaternion.identity);
+        return null;
+    }
+
 
 }
 

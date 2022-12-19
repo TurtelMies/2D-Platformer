@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
 
     public ParticleSystem smoke;
+    public ParticleSystem MuzzleFlash;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
         {
             StartCoroutine(Shoot());
            EnitSmoke();
-           
+           EnitMuzzleFlash();
         }   
     }
         
@@ -35,11 +36,10 @@ public class PlayerShoot : MonoBehaviour
     private void EnitSmoke(){
         smoke.Play();
     }
-
+ private void EnitMuzzleFlash(){
+        MuzzleFlash.Play();
+    }
         
-
-       
-
     
     IEnumerator Shoot()
     {
