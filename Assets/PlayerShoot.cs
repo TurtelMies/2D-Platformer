@@ -23,15 +23,16 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isShooting)
+        if (Input.GetButtonDown("Jump") && !isShooting)
         {
             StartCoroutine(Shoot());
            EnitSmoke();
            EnitMuzzleFlash();
         }   
+     
     }
         
-//---------------------------------------//////////////////////////////---------DO MUZZLE FLASH
+
 
     private void EnitSmoke(){
         smoke.Play();
@@ -40,6 +41,7 @@ public class PlayerShoot : MonoBehaviour
         MuzzleFlash.Play();
     }
         
+       
     
     IEnumerator Shoot()
     {
@@ -52,6 +54,8 @@ public class PlayerShoot : MonoBehaviour
         yield return new WaitForSeconds(shootTimer);
         isShooting = false;
     }
+    
+    
     
 }
     

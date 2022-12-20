@@ -13,8 +13,8 @@ public class CharacterMove : MonoBehaviour
     public Animator animator;
 
  
-
-
+//------------------------------------------------------------------------https://www.youtube.com/watch?v=BLfNP4Sc_iA tai tee monta heltti baaria päälekkäin ja poista niitä
+//----------------------------------------------------------------------------------Kuolema laavaan
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +26,12 @@ public class CharacterMove : MonoBehaviour
     void Update()
     {
 
-        
-        
-    //do turning
+
+    //do turning ?? too much
         
         
  //recoil
-if (Input.GetButtonDown("Fire1") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f) //Voi potkaista ilman ampumista
+if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f) //Voi potkaista ilman ampumista
         {
             _rigidbody.AddForce(new Vector2(-5, 2), ForceMode2D.Impulse);
         }
@@ -43,7 +42,7 @@ if (Input.GetButtonDown("Fire1") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f) /
 
     animator.SetFloat("Speed", Mathf.Abs(movement)); 
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetKey("w") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
 

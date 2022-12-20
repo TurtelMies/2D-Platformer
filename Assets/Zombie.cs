@@ -16,7 +16,10 @@ using UnityEngine;
      public float horizontalInput;
      public float verticalInput;
 
-   
+     public float Xpos;
+     public float Ypos;
+
+     private Rigidbody2D _rigidbody;
 
      
 
@@ -32,7 +35,8 @@ using UnityEngine;
  {
  if (collision.gameObject.CompareTag("Bullet"))
     {
-       
+       Xpos = this. transform. position. x;
+     Ypos = this. transform. position. y;
         Destroy(this.gameObject);
       StartCoroutine(spawn());
     }   
@@ -50,10 +54,10 @@ using UnityEngine;
 
     }
 
-    IEnumerator spawn()
+    IEnumerator spawn() //-------------------- ADD FORCE, PICKUPS
     {
-       Instantiate(head,new Vector2 (0,10), Quaternion.identity);
-       Instantiate(zombiebody,new Vector2 (0,0), Quaternion.identity);
+       Instantiate(head,new Vector2 (Xpos,Ypos + 1), Quaternion.identity);
+       Instantiate(zombiebody,new Vector2 (Xpos,Ypos), Quaternion.identity);
         return null;
     }
 
