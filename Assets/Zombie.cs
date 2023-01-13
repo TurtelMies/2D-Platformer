@@ -37,6 +37,7 @@ using UnityEngine;
     {
        Xpos = this. transform. position. x;
      Ypos = this. transform. position. y;
+        Destroy(collision.gameObject);
         Destroy(this.gameObject);
       StartCoroutine(spawn());
     }   

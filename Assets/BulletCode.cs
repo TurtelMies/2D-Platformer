@@ -13,11 +13,12 @@ public class BulletCode : MonoBehaviour
     // Update is called once per frame
     private void OnTriggeerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Zombie>() !=null)
+        if (collision.gameObject.CompareTag("Ground"))
             {
-                Destroy(collision.gameObject);
-                Destroy(gameObject);
+               Destroy(gameObject); // EI TOIMI GROUNDIIN, ZOMBI TOIMII
             }
-            
+    
+        
     }   
+
 }

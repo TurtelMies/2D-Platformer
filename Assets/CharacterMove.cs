@@ -20,6 +20,7 @@ public class CharacterMove : MonoBehaviour
 
     public bool stopMoving = false;
     public GameObject PlayerDed;
+    public GameObject Shotgun;
     public float pYpos;
     public float pXpos;
 
@@ -67,6 +68,10 @@ public class CharacterMove : MonoBehaviour
              animator.SetBool("IsJumping", false);
             }
         
+            if (Input.GetButtonDown("Jump")){
+                
+            }
+
         }
         
        
@@ -93,6 +98,7 @@ public class CharacterMove : MonoBehaviour
                 pYpos = this. transform. position. y;
                 Destroy(this.gameObject);
                 StartCoroutine(DedPlayerSpawn());
+                StartCoroutine(ShotgunSpawn());
                
                 
             }
@@ -109,6 +115,12 @@ public class CharacterMove : MonoBehaviour
         IEnumerator DedPlayerSpawn() 
         {
             Instantiate(PlayerDed,new Vector2 (pXpos,pYpos), Quaternion.identity);
+            return null;
+        }
+
+        IEnumerator ShotgunSpawn() 
+        {
+            Instantiate(Shotgun,new Vector2 (pXpos,pYpos), Quaternion.identity);
             return null;
         }
 
