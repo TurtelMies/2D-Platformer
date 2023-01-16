@@ -48,17 +48,22 @@ using UnityEngine;
     // Update is called once per frame
     void Update()
     {
-
         //if (checkTrigger ){}
-        
+        if(Vector2.Distance(transform.position, target.position) < 10)
+        {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+
+
+
+            
 
     }
 
     IEnumerator spawn() //-------------------- ADD FORCE, PICKUPS
     {
-       Instantiate(head,new Vector2 (Xpos,Ypos + 1), Quaternion.identity);
-       Instantiate(zombiebody,new Vector2 (Xpos,Ypos), Quaternion.identity);
+       Instantiate(head,new Vector3 (Xpos,Ypos + 1, 0), Quaternion.identity);
+       Instantiate(zombiebody,new Vector3 (Xpos,Ypos, 0), Quaternion.identity);
         return null;
     }
 
