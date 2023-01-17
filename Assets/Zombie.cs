@@ -38,7 +38,7 @@ using UnityEngine;
        Xpos = this. transform. position. x;
      Ypos = this. transform. position. y;
         Destroy(collision.gameObject);
-        Destroy(this.gameObject);
+         gameObject.GetComponent<Renderer>().enabled = false;
       StartCoroutine(spawn());
     }   
 
@@ -48,15 +48,13 @@ using UnityEngine;
     // Update is called once per frame
     void Update()
     {
+
+
         //if (checkTrigger ){}
         if(Vector2.Distance(transform.position, target.position) < 10)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-
-
-
-            
 
     }
 

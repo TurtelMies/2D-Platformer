@@ -12,6 +12,8 @@ public class CharacterMove : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject Player;
+
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -39,7 +41,9 @@ public class CharacterMove : MonoBehaviour
     void Update()
     {
         
+        // gameObject.GetComponent<Renderer>().enabled = false;
 
+        //other.GetComponent<BoxCollider>().enabled = false;
 
         //do turning ?? too much
         
@@ -90,13 +94,13 @@ public class CharacterMove : MonoBehaviour
         {
             TakeDamage(20);
             helt++;
-            _rigidbody.AddForce(new Vector2(-8, 2), ForceMode2D.Impulse);
+            _rigidbody.AddForce(new Vector2(-4, 2), ForceMode2D.Impulse);
             if (helt == 5)
             {
                 stopMoving = true;
                 pXpos = this. transform. position. x;
                 pYpos = this. transform. position. y;
-                Destroy(this.gameObject);
+                gameObject.GetComponent<Renderer>().enabled = false;
                 StartCoroutine(DedPlayerSpawn());
                 StartCoroutine(ShotgunSpawn());
                
@@ -107,7 +111,7 @@ public class CharacterMove : MonoBehaviour
         {
             TakeDamage(100);
             stopMoving = true;
-            Destroy(this.gameObject);
+             gameObject.GetComponent<Renderer>().enabled = false;
         }
 
         }   

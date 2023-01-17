@@ -40004,8 +40004,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847859315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 182.39, y: -14.18, z: 0}
-  m_LocalScale: {x: 0.616, y: 0.616, z: 0.616}
+  m_LocalPosition: {x: 182.77, y: -14.03, z: 0}
+  m_LocalScale: {x: 0.56518, y: 0.56518, z: 0.56518}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1907953865}
@@ -41002,7 +41002,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.636574
+  orthographic size: 2.7782125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -41026,7 +41026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867778547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.74, y: -1.09, z: -10}
+  m_LocalPosition: {x: -5.83, y: -1.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45569,7 +45569,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047184358}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb05528bc6830ac47b8868e7f2b31541, type: 3}
   m_Name: 
@@ -45577,13 +45577,14 @@ MonoBehaviour:
   MovementSpeed: 400000
   JumpForce: 5
   animator: {fileID: 1047184362}
+  Player: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1577544719}
   helt: 0
   stopMoving: 0
   PlayerDed: {fileID: 4928877024965422939, guid: 616007b0783eb3d4dabc2a6ca70d562d, type: 3}
-  Shotgun: {fileID: 0}
+  Shotgun: {fileID: 3712780145371503125, guid: 0ff040ea015b40747804bb83b05ed8ea, type: 3}
   pYpos: 0
   pXpos: 0
 --- !u!50 &1047184364
@@ -58127,6 +58128,7 @@ MonoBehaviour:
   MovementSpeed: 6
   JumpForce: 6
   animator: {fileID: 1047184362}
+  Player: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1577544719}
